@@ -10,7 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class MiningRepresentationTest {
 
     public static void main(String[] args) {
-        MiningRepresentation.generate("M..<..B", 12);
+        List<String> result = MiningRepresentation.generate("M..<..B", 12);
+        System.out.println(result);
     }
 
     // All following tests are copied from CodeWars
