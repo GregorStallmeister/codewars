@@ -12,6 +12,13 @@ import java.util.List;
 public class PushAnObjectIntoArrayTest {
 
     @Test
+    public void testSomethingFirst() {
+        List<String> items = PushAnObjectIntoArray.pushFirstAttempt();
+        assertEquals(1, items.size());
+        assertEquals("an object", items.get(0));
+    }
+
+    @Test
     public void testSomething() {
         List<String> items = PushAnObjectIntoArray.push();
         assertEquals(1, items.size());
