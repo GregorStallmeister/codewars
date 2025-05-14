@@ -1,6 +1,7 @@
 package de.gregorstallmeister.codewars;
 
 import java.util.ArrayList;
+import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 public class MultipleOfIndex {
@@ -46,9 +47,24 @@ public class MultipleOfIndex {
         return matches.stream().mapToInt(x -> x).toArray();
     }
 
-    public static int[] multipleOfIndex(int[] array) {
+    public static int[] multipleOfIndexThird(int[] array) {
         return IntStream.range(0, array.length)
                 .filter(i -> (i == 0 && array[i] == 0) || (i != 0 && array[i] % i == 0))
+                .map(i -> array[i])
+                .toArray();
+    }
+
+    public static int[] multipleOfIndex(int[] array) {
+        IntPredicate isMultipleOfIndex = (i) -> {
+            if (i == 0) {
+                return array[i] == 0;
+            }
+
+            return array[i] % i == 0;
+        };
+
+        return IntStream.range(0, array.length)
+                .filter(isMultipleOfIndex)
                 .map(i -> array[i])
                 .toArray();
     }
