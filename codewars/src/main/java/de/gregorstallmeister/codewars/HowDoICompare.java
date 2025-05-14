@@ -21,7 +21,11 @@ public class HowDoICompare {
             Map.entry(42 * 42, "everything squared")
     );
 
-    public static String whatIs(Integer x) {
+    public static String whatIsSecond(Integer x) {
         return SPECIAL_NUMBERS.getOrDefault(x, "nothing");
+    }
+
+    public static String whatIs(Integer x) {
+        return Map.of(42, "everything", 42 * 42, "everything squared").getOrDefault(x, "nothing");
     }
 }
