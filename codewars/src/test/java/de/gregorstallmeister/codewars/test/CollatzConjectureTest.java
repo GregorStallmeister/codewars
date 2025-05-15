@@ -10,6 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CollatzConjectureTest {
 
     @Test
+    void sampleTestsFirst() {
+        assertEquals(0, CollatzConjecture.hotpoFirst(1));
+        assertEquals(5, CollatzConjecture.hotpoFirst(5));
+        assertEquals(8, CollatzConjecture.hotpoFirst(6));
+        assertEquals(15, CollatzConjecture.hotpoFirst(23));
+    }
+
+    @Test
     void sampleTests() {
         assertEquals(0, CollatzConjecture.hotpo(1));
         assertEquals(5, CollatzConjecture.hotpo(5));
