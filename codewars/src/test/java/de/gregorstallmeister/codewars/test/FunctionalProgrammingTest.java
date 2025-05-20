@@ -1,17 +1,24 @@
 package de.gregorstallmeister.codewars.test;
 
 import de.gregorstallmeister.codewars.FunctionalProgramming;
-import de.gregorstallmeister.codewars.Student;
+import de.gregorstallmeister.codewars.Triangle;
 import org.junit.Test;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
-// https://www.codewars.com/kata/54a6b43e478d8ee14c000a5d/train/java
+// https://www.codewars.com/kata/54a6c6e7478d8ee02d000cd9/train/java
 
 public class FunctionalProgrammingTest {
     @Test
-    public void testJohnSmith() throws Exception {
-        Student jSmith = new Student("John", "Smith", "js123");
-        assertTrue("John Smith with student number js123 did not return true", FunctionalProgramming.f.apply(jSmith));
+    public void testAreaFirst() throws Exception {
+        Triangle t = new Triangle(5, 10);
+        assertEquals("Incorrect area returned", 25D, FunctionalProgramming.fFirst.applyAsDouble(t), 0.001);
+        assertEquals("Incorrect area in Triangle object", 25D, t.getArea(), 0.001);
+    }
+
+    @Test
+    public void testArea() throws Exception {
+        Triangle t = new Triangle(5, 10);
+        assertEquals("Incorrect area returned", 25D, FunctionalProgramming.f.applyAsDouble(t), 0.001);
+        assertEquals("Incorrect area in Triangle object", 25D, t.getArea(), 0.001);
     }
 }
