@@ -1,4 +1,4 @@
-package de.gregorstallmeister.codewars;
+package de.gregorstallmeister.codewars.neededClasses;
 
 public class Triangle {
     public final int height;

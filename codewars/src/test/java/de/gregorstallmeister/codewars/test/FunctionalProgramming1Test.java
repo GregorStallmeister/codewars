@@ -1,7 +1,7 @@
 package de.gregorstallmeister.codewars.test;
 
 import de.gregorstallmeister.codewars.FunctionalProgramming1;
-import de.gregorstallmeister.codewars.Student;
+import de.gregorstallmeister.codewars.neededClasses.Student;
 import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

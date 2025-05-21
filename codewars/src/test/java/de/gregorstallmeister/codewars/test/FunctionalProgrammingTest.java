@@ -1,7 +1,7 @@
 package de.gregorstallmeister.codewars.test;
 
 import de.gregorstallmeister.codewars.FunctionalProgramming;
-import de.gregorstallmeister.codewars.Triangle;
+import de.gregorstallmeister.codewars.neededClasses.Triangle;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

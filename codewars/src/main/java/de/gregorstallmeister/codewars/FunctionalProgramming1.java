@@ -1,5 +1,7 @@
 package de.gregorstallmeister.codewars;
 
+import de.gregorstallmeister.codewars.neededClasses.Student;
+
 import java.util.function.Function;
 
 public class FunctionalProgramming1 {

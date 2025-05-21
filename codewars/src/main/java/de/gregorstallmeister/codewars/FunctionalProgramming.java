@@ -1,5 +1,7 @@
 package de.gregorstallmeister.codewars;
 
+import de.gregorstallmeister.codewars.neededClasses.Triangle;
+
 import java.util.function.ToDoubleBiFunction;
 import java.util.function.ToDoubleFunction;
 
