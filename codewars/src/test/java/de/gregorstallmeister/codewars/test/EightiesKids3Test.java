@@ -9,6 +9,8 @@ import java.util.Collections;
 import de.gregorstallmeister.codewars.EightiesKids3;
 import org.junit.Test;
 
+// https://www.codewars.com/kata/5662292ee7e2da24e900012f
+
 public class EightiesKids3Test {
     @Test
     public void testPunkyFirst() {
