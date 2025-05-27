@@ -1,7 +1,7 @@
 package de.gregorstallmeister.codewars;
 
 public class NotePassing {
-    public static String decipher(String codedMessage){
+    public static String decipherFirst(String codedMessage){
         char[] codedMessageChars = codedMessage.toCharArray();
         StringBuilder decipheredMessageBuilder = new StringBuilder();
 
@@ -60,6 +60,24 @@ public class NotePassing {
                 case 'Z' -> decipheredMessageBuilder.append('G');
                 case 'z' -> decipheredMessageBuilder.append('g');
                 default -> decipheredMessageBuilder.append(c);
+            }
+        }
+
+        return decipheredMessageBuilder.toString();
+    }
+
+    public static String decipher(String codedMessage){
+        StringBuilder decipheredMessageBuilder = new StringBuilder();
+        String charsCiphered = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String charsDecoded =  "hijklmnopqrstuvwxyzabcdefgHIJKLMNOPQRSTUVWXYZABCDEFG";
+
+        for (int i = 0; i < codedMessage.length(); i++) {
+            int idx = charsCiphered.indexOf(codedMessage.charAt(i));
+            if (idx != -1) {
+                decipheredMessageBuilder.append(charsDecoded.charAt(idx));
+            }
+            else {
+                decipheredMessageBuilder.append(codedMessage.charAt(i));
             }
         }
 
