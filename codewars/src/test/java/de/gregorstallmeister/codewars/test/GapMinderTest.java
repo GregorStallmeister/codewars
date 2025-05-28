@@ -5,6 +5,21 @@ import org.junit.*;
 
 public class GapMinderTest {
     @Test
+    public void testABCFirst() {
+        Assert.assertEquals("All carriages are present, so method should find 0 missing", 0, GapMinder.countMissingCarriagesFirst("ABC"));
+    }
+
+    @Test
+    public void testABDFirst() {
+        Assert.assertEquals("Carriage C is missing, so method should find 1 missing", 1, GapMinder.countMissingCarriagesFirst("ABD"));
+    }
+
+    @Test
+    public void testBCFFirst() {
+        Assert.assertEquals("Carriages A, D, and E are missing, so method should find 3 missing", 3, GapMinder.countMissingCarriagesFirst("BCF"));
+    }
+
+    @Test
     public void testABC() {
         Assert.assertEquals("All carriages are present, so method should find 0 missing", 0, GapMinder.countMissingCarriages("ABC"));
     }
