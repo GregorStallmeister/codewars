@@ -1,5 +1,6 @@
 package de.gregorstallmeister.codewars;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class FindOdd {
@@ -21,7 +22,7 @@ public class FindOdd {
         throw new RuntimeException("Given array does not meet the requirements given for the task!");
     }
 
-    public static int findIt(int[] a) {
+    public static int findItSecond(int[] a) {
         int odd = 0;
 
         for (int n : a) {
@@ -30,5 +31,9 @@ public class FindOdd {
         }
 
         return odd;
+    }
+
+    public static int findIt(int[] a) {
+        return Arrays.stream(a).reduce(0, (x, y) -> x ^ y);
     }
 }
