@@ -22,7 +22,7 @@ public class GapMinder {
         return missing;
     }
 
-    public static int countMissingCarriages(String train) {
+    public static int countMissingCarriagesSecond(String train) {
         // Rank 12 in Best Practices! Beaten my own first solution.
         String cComplete = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int cCPos = 0;
@@ -37,5 +37,9 @@ public class GapMinder {
         }
 
         return missing;
+    }
+
+    public static int countMissingCarriages(String train) {
+        return (train.charAt(train.length() - 1) - 'A' + 1) - train.length();
     }
 }
