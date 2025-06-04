@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.BitSet;
 
 public class BitCounting {
-    public static int countBits(int n) {
+    public static int countBitsFirst(int n) {
         int ones = 0;
 
         for (char b: Integer.toBinaryString(n).toCharArray()) {
@@ -14,5 +14,16 @@ public class BitCounting {
         }
 
         return ones;
+    }
+
+    public static int countBitsSecond(int n) {
+        return Integer.bitCount(n);
+    }
+
+    public static int countBits(int n) {
+        return (int) Integer.toBinaryString(n)
+                .chars()
+                .filter(c -> c == '1')
+                .count();
     }
 }
