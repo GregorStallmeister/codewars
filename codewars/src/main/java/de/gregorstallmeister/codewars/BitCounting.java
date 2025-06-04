@@ -1,7 +1,5 @@
 package de.gregorstallmeister.codewars;
 
-import java.util.Arrays;
-import java.util.BitSet;
 
 public class BitCounting {
     public static int countBitsFirst(int n) {
