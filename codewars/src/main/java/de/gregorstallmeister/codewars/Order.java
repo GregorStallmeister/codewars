@@ -1,7 +1,7 @@
 package de.gregorstallmeister.codewars;
 
 public class Order {
-    public static String order(String words) {
+    public static String orderFirst(String words) {
         if (words.isEmpty()) {
             return "";
         }
@@ -26,5 +26,26 @@ public class Order {
         }
 
         return stringBuilder.toString();
+    }
+
+    public static String order(String words) {
+        if (words.isEmpty()) {
+            return "";
+        }
+
+        String[] wordsArray = words.split(" ");
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < wordsArray.length; i++) {
+            for (String word : wordsArray) {
+                if (word.contains(String.valueOf(i + 1))) {
+                    stringBuilder.append(word);
+                    stringBuilder.append(" ");
+                    break;
+                }
+            }
+        }
+
+        return stringBuilder.toString().trim();
     }
 }
