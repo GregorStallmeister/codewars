@@ -1,5 +1,8 @@
 package de.gregorstallmeister.codewars;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Order {
     public static String orderFirst(String words) {
         if (words.isEmpty()) {
@@ -28,7 +31,7 @@ public class Order {
         return stringBuilder.toString();
     }
 
-    public static String order(String words) {
+    public static String orderSecond(String words) {
         if (words.isEmpty()) {
             return "";
         }
@@ -47,5 +50,16 @@ public class Order {
         }
 
         return stringBuilder.toString().trim();
+    }
+
+    public static String order(String words) {
+        if (words.isEmpty()) {
+            return "";
+        }
+
+        return Arrays.stream(words.split(" "))
+                .sorted(Comparator.comparing(w -> Integer.valueOf(w.replaceAll("\\D", ""))))
+                .reduce((a, b) -> a + " " + b)
+                .get();
     }
 }
