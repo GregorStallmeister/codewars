@@ -3,7 +3,7 @@ package de.gregorstallmeister.codewars;
 public class TribonacciSequence {
     public double[] tribonacci(double[] s, int n) {
         double[] result = new double[n];
-        for (int i = 0; i < s.length; i++) {
+        for (int i = 0; i < s.length  && i < n; i++) {
             result[i] = s[i];
         }
 
