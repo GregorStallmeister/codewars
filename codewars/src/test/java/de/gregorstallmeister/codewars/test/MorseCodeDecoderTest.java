@@ -9,6 +9,11 @@ import static org.junit.Assert.assertThat;
 
 public class MorseCodeDecoderTest {
     @Test
+    public void testExampleFromDescriptionFirst() {
+        assertThat(MorseCodeDecoder.decodeFirst(".... . -.--   .--- ..- -.. ."), is("HEY JUDE"));
+    }
+
+    @Test
     public void testExampleFromDescription() {
         assertThat(MorseCodeDecoder.decode(".... . -.--   .--- ..- -.. ."), is("HEY JUDE"));
     }
