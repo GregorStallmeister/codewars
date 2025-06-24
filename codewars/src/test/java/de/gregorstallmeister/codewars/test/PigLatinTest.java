@@ -8,6 +8,12 @@ import static org.junit.Assert.assertEquals;
 
 public class PigLatinTest {
     @Test
+    public void FixedTestsFirst() {
+        assertEquals("igPay atinlay siay oolcay", PigLatin.pigItFirst("Pig latin is cool"));
+        assertEquals("hisTay siay ymay tringsay", PigLatin.pigItFirst("This is my string"));
+    }
+
+    @Test
     public void FixedTests() {
         assertEquals("igPay atinlay siay oolcay", PigLatin.pigIt("Pig latin is cool"));
         assertEquals("hisTay siay ymay tringsay", PigLatin.pigIt("This is my string"));
