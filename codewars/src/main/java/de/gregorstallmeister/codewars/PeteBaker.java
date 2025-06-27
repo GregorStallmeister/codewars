@@ -20,7 +20,7 @@ public class PeteBaker {
         return res;
     }
 
-    public static int cakes(Map<String, Integer> recipe, Map<String, Integer> available) {
+    public static int cakesSecond(Map<String, Integer> recipe, Map<String, Integer> available) {
         int res = Integer.MAX_VALUE;
 
         for (String ingredient : recipe.keySet()) {
@@ -31,5 +31,12 @@ public class PeteBaker {
         }
 
         return res;
+    }
+
+    public static int cakes(Map<String, Integer> recipe, Map<String, Integer> available) {
+        return  recipe.entrySet().stream()
+                .mapToInt(entry -> available.getOrDefault(entry.getKey(), 0) / entry.getValue())
+                .min()
+                .orElse(0);
     }
 }
