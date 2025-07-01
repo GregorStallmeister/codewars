@@ -5,4 +5,5 @@ In many files you see more than one solution. That’s because the first solutio
 In general, I take codewars as a platform to learn from each other. Thanks to all who submitted their solutions! And feel free to learn from the solutions you find here!
 
 Happy coding!
+
 Gregor
