@@ -1,6 +1,7 @@
 package de.gregorstallmeister.codewars;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 public class WeightSort {
@@ -9,9 +10,21 @@ public class WeightSort {
                 .collect(Collectors.joining(" "));
     }
 
-    public static String orderWeight(String weights) {
+    public static String orderWeightSecond(String weights) {
         return Arrays.stream(weights.trim().split("[ ]+")).sorted(WeightSort::sort)
                 .collect(Collectors.joining(" "));
+    }
+
+    public static String orderWeight(String weights) {
+        return Arrays.stream(weights.trim().split("[ ]+"))
+                .sorted(Comparator
+                        .comparing(WeightSort::countCrossSumJavaTrick)
+                        .thenComparing(String::compareTo))
+                .collect(Collectors.joining(" "));
+    }
+
+    public static int countCrossSumJavaTrick (String weight) {
+        return weight.chars().map(c -> c -48).sum();
     }
 
     private static int sortFirst(String weightA, String weightB) {
