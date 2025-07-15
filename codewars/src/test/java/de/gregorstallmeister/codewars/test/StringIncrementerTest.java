@@ -10,7 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class StringIncrementerTest {
     private static void doTest(String str, String expected) {
-        String actual = assertDoesNotThrow(() -> StringIncrementer.incrementString(str), "Solution thrown an unexpected exception for str=\"" + str + "\"\n\n");
+//        String actual = assertDoesNotThrow(() -> StringIncrementer.incrementString(str), "Solution thrown an unexpected exception for str=\"" + str + "\"\n\n");
+        String actual = StringIncrementer.incrementString(str);
         assertEquals(expected, actual, "Incorrect answer for str=\"" + str + "\"\n\n");
     }
 
@@ -26,5 +27,7 @@ public class StringIncrementerTest {
 
         doTest("1", "2");
         doTest("CN6hNDApuTFkWR?N]$ki*V5Q%b*pbF9&\"ryI877367582289887196622005331632", "CN6hNDApuTFkWR?N]$ki*V5Q%b*pbF9&\"ryI877367582289887196622005331633");
+        doTest("009", "010");
+        doTest("0000000000000000003267175195397088", "0000000000000000003267175195397089");
     }
 }
