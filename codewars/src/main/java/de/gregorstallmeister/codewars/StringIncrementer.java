@@ -1,8 +1,10 @@
 package de.gregorstallmeister.codewars;
 
+import java.math.BigInteger;
+
 public class StringIncrementer {
     // Rank 39
-    public static String incrementString(String str) {
+    public static String incrementStringFirst(String str) {
         if (!str.matches(".*[\\d]+"))
             return str + "1";
 
@@ -38,5 +40,29 @@ public class StringIncrementer {
         }
 
         return stringBuilder.toString();
+    }
+
+    // Rank 39, first solution now on rank 40
+    public static String incrementString(String str) {
+        if (!str.matches(".*[\\d]+"))
+            return str + "1";
+
+        int pos = str.length() - 1;
+        while (pos > -1 && str.substring(pos).matches("^[\\d]+$")) {
+            pos--;
+        }
+        pos++;
+
+        String partText = str.substring(0, pos);
+        String partDigits = str.substring(pos);
+        BigInteger bigInteger = new BigInteger(partDigits);
+
+        StringBuilder returnBuilder = new StringBuilder(String.valueOf(bigInteger.add(BigInteger.ONE)));
+        while (returnBuilder.length() < partDigits.length()) {
+            returnBuilder.insert(0, "0");
+        }
+        returnBuilder.insert(0, partText);
+
+        return returnBuilder.toString();
     }
 }
