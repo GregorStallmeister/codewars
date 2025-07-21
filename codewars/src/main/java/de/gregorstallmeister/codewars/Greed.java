@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Greed {
     // below top 50
-    public static int greedy(int[] dice){
+    public static int greedyFirst(int[] dice){
         Map<Integer, Integer> occ = new HashMap<>();
 
         for (int i = 1; i < 7; i++) {
@@ -49,5 +49,14 @@ public class Greed {
             score += 600;
 
         return score;
+    }
+
+    public static int greedy(int[] dice){
+        int[] occ = new int[7];
+
+        for (int die : dice)
+            occ[die]++;
+
+        return occ[1]/3*1000 + occ[1]%3*100 + occ[2]/3*200 + occ[3]/3*300 + occ[4]/3*400 + occ[5]/3*500 + occ[5]%3*50 + occ[6]/3*600;
     }
 }

@@ -8,6 +8,37 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GreedTest {
     @Test
+    public void shouldBeWorthlessFirst() {
+        assertEquals(0, Greed.greedyFirst(new int[]{2, 3, 4, 6, 2}));
+    }
+
+    @Test
+    public void shouldValueTripletsFirst() {
+        assertEquals(400, Greed.greedyFirst(new int[]{4, 4, 4, 3, 3}));
+    }
+
+    @Test
+    public void shouldValueMixedSetsFirst() {
+        assertEquals(450, Greed.greedyFirst(new int[]{2, 4, 4, 5, 4}));
+    }
+
+    @Test
+    public void shouldValueOnesAndFiveFirst() {
+        assertEquals(250, Greed.greedyFirst(new int[]{5, 1, 3, 4, 1}));
+    }
+
+    @Test
+    public void shouldValueTripletAndAdditionalOneFirst() {
+        assertEquals(1100, Greed.greedyFirst(new int[]{1, 1, 1, 3, 1}));
+    }
+
+    @Test
+    public void shouldValueTripletAndFiveFirst() {
+        assertEquals(450, Greed.greedyFirst(new int[]{2, 4, 4, 5, 4}));
+    }
+
+
+    @Test
     public void shouldBeWorthless() {
         assertEquals(0, Greed.greedy(new int[]{2, 3, 4, 6, 2}));
     }
