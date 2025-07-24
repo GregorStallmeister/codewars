@@ -36,7 +36,7 @@ public class PrimeDecomp {
         for (int d = 2; d <= Math.sqrt(n); d++) {
             if (n % d == 0) {
                 n++;
-                break;
+                d = 1;
             }
         }
 

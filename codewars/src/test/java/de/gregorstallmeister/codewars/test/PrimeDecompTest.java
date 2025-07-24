@@ -17,5 +17,9 @@ public class PrimeDecompTest {
         assertEquals(
                 "(2**2)(3**3)(5)(7)(11**2)(17)",
                 PrimeDecomp.factors(7775460));
+
+        assertEquals(
+                "(2**2)(3**3)(5)(7)(11**2)(17)(103)",
+                PrimeDecomp.factors(800872380));
     }
 }
