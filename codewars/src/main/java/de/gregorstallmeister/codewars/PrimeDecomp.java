@@ -2,7 +2,7 @@ package de.gregorstallmeister.codewars;
 
 public class PrimeDecomp {
     // below top 50
-    public static String factors(int n) {
+    public static String factorsFirst(int n) {
         int rest = n;
         int currPrime = 2;
         StringBuilder resBuilder = new StringBuilder();
@@ -41,6 +41,32 @@ public class PrimeDecomp {
         }
 
         return n;
+    }
+
+    public static String factors(int n) {
+        int rest = n;
+        StringBuilder resBuilder = new StringBuilder();
+
+        for (int d = 2; d <= n; d++) {
+            int exp = 0;
+
+            while (rest % d == 0) {
+                exp++;
+                rest /= d;
+            }
+
+            if (exp > 0) {
+                resBuilder.append("(");
+                resBuilder.append(d);
+                if (exp > 1) {
+                    resBuilder.append("**");
+                    resBuilder.append(exp);
+                }
+                resBuilder.append(")");
+            }
+        }
+
+        return resBuilder.toString();
     }
 
 

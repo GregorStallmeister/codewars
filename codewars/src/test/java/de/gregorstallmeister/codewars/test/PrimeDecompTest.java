@@ -9,6 +9,21 @@ import org.junit.*;
 
 public class PrimeDecompTest {
     @Test
+    public void testPrimeDecompOneFirst() {
+        assertEquals(
+                "(2**5)(3)",
+                PrimeDecomp.factorsFirst(96));
+
+        assertEquals(
+                "(2**2)(3**3)(5)(7)(11**2)(17)",
+                PrimeDecomp.factorsFirst(7775460));
+
+        assertEquals(
+                "(2**2)(3**3)(5)(7)(11**2)(17)(103)",
+                PrimeDecomp.factorsFirst(800872380));
+    }
+
+    @Test
     public void testPrimeDecompOne() {
         assertEquals(
                 "(2**5)(3)",
