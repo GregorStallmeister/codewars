@@ -1,11 +1,10 @@
 package de.gregorstallmeister.codewars;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SumSquaredDivisors {
+    // Rank 55
     public static String listSquared(long m, long n) {
         StringBuilder resBuilder = new StringBuilder();
         resBuilder.append("[");
@@ -16,7 +15,10 @@ public class SumSquaredDivisors {
             for (long div = 1; div <= Math.sqrt(num); div++) {
                 if (num % div == 0) {
                     divisors.add(div);
-                    divisors.add(num / div);
+
+                    if (!divisors.contains(num / div)) {
+                        divisors.add(num / div);
+                    }
                 }
             }
 
@@ -34,6 +36,13 @@ public class SumSquaredDivisors {
                 resBuilder.append(", ");
             }
         }
+
+        int idxLastComma = resBuilder.lastIndexOf(",");
+        if (idxLastComma > -1) {
+            resBuilder.deleteCharAt(idxLastComma + 1);
+            resBuilder.deleteCharAt(idxLastComma);
+        }
+        resBuilder.append("]");
 
         return resBuilder.toString();
     }
