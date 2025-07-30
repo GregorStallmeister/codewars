@@ -1,8 +1,8 @@
 package de.gregorstallmeister.codewars.test;
 
 import de.gregorstallmeister.codewars.LoopInspector;
+import de.gregorstallmeister.codewars.neededClasses.Node;
 import org.junit.Test;
-import org.w3c.dom.Node;
 
 import static org.junit.Assert.assertEquals;
 
