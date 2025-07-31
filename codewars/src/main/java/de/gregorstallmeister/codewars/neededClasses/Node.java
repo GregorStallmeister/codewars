@@ -14,7 +14,7 @@ public class Node {
 
         Node firstInLoop = currNode;
 
-        for (int j = 0; j < lnLoop; j++) {
+        for (int j = 1; j < lnLoop; j++) {
             Node newNode = new Node();
             currNode.setNext(newNode);
             currNode = newNode;
