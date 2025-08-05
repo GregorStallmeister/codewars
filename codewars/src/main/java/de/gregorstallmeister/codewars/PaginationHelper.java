@@ -52,8 +52,6 @@ public class PaginationHelper<I> {
             return -1;
         }
 
-        int idx = items.size() - (maxItemsPerPage * itemIndex);
-
-        return idx > 0 ? idx : -1;
+        return itemIndex / maxItemsPerPage;
     }
 }
