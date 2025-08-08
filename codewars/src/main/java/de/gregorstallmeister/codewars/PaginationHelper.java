@@ -2,6 +2,8 @@ package de.gregorstallmeister.codewars;
 
 import java.util.List;
 
+// Rank24! And now I'm in Rank 4 kyu in Java! Honor Percentile: Top 14.988%! I'm proud and happy!
+// And much more, I'm very thankful to all who contribute to codewars! You all do an excellent and uncountable helpful job!
 public class PaginationHelper<I> {
     private List<I> items;
     private int maxItemsPerPage;
@@ -34,13 +36,13 @@ public class PaginationHelper<I> {
      * this method should return -1 for pageIndex values that are out of range
      */
     public int pageItemCount(int pageIndex) {
-        if (pageIndex == 0 && items.size() > 0) {
-            return Math.min(items.size(), maxItemsPerPage);
+        if (pageIndex < 0) {
+            return -1;
         }
 
         int itemsOnPage = items.size() - (maxItemsPerPage * (pageIndex));
 
-        return itemsOnPage > 0 ? itemsOnPage : -1;
+        return itemsOnPage > 0 ? Math.min(maxItemsPerPage, itemsOnPage) : -1;
     }
 
     /**
